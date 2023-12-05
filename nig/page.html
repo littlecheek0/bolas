@@ -50,21 +50,111 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="#">Page</a></li>
+            <li><a href="test.html">Test</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <section>
-        <h2>Main Content Section</h2>
-            <img src="https://i.imgur.com/XCRUbTj.png">
+        <h2></h2>
+            
+        <style>
+            /* Style for the initially hidden text box */
+            #textBox {
+                display: none;
+            }
+    
+            /* Style for the image button */
+            #imageButton {
+                cursor: pointer;
+                /* Add any other styling as needed */
+            }
+        </style>
+        <body>
+
+            <img id="imageButton" src="https://i.imgur.com/XCRUbTj.png" alt="Button Image" onclick="showTextBox()">
+            
+            <div id="textBox">
+                <label for="inputText">bruh:</label>
+                <input type="text" id="inputText">
+                <button onclick="processInput()">Submit</button>
+            </div>
+            
+            <script>
+                function showTextBox() {
+                    // Display the text box when the image is clicked
+                    document.getElementById('textBox').style.display = 'block';
+                }
+            
+                function processInput() {
+                    // Get the value from the text box
+                    var userInput = document.getElementById('inputText').value;
+            
+                    // Example if statement
+                    if (userInput === '727') {
+                        window.location.href = 'verysecret.html';
+                    } else {
+                        alert('bruh');
+                    }
+            
+                    // Hide the text box again
+                    document.getElementById('textBox').style.display = 'none';
+                }
+            </script>
+            
+            </body>
+
     </section>
 
     <aside>
-        <h2>Side Content</h2>
-           <video width="150" height="320" controls>
-           <source src="videohere" type="video/mp4">
+        <h2></h2>
+        <style>
+            /* Style for the container */
+            .image-container {
+                position: relative;
+                display: inline-block;
+            }
+    
+            /* Style for the default image */
+            .default-image {
+                display: block;
+                width: 150px; /* Adjust the width as needed */
+                height: auto;
+                transition: opacity 0.3s ease;
+            }
+    
+            /* Style for the overlay image (initially hidden) */
+            .overlay-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                width: 150px; /* Adjust the width as needed */
+                height: auto;
+            }
+    
+            /* Apply the overlay effect on hover */
+            .image-container:hover .default-image {
+                opacity: 0;
+            }
+    
+            /* Apply the overlay effect on hover */
+            .image-container:hover .overlay-image {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <div class="image-container">
+        <img class="default-image" src="https://i.imgur.com/XCRUbTj.png">
+        <img class="overlay-image" src="../nig/images/astolfo.gif">
+    </div>
            </video>
     </aside>
+
+
 
     <footer>
         <p>&copy; 2023 Your Website. All rights reserved.</p>
